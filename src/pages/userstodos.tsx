@@ -23,7 +23,8 @@ export default function Userstodos() {
     </div>
     <ul>
       {todos.map (todo=>(
-        <li key={todo.id}>{todo.title}</li>
+        <li key ={todo.id}><input type="checkbox" checked={todo.completed} />{todo.title}</li>
+        
       )
 
       )}
