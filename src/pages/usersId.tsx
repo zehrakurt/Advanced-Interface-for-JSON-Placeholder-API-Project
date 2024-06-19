@@ -1,5 +1,5 @@
 import React from 'react'
-import { useLoaderData} from "react-router-dom";
+import { Link, useLoaderData} from "react-router-dom";
 import { useParams } from 'react-router-dom';
 interface User {
     id: number;
@@ -16,10 +16,25 @@ export default function UsersId() {
     const user=useLoaderData() as User
     const {userId} =useParams()
   return (
+    <> 
     <div>
       <h1> {user.name}</h1>
       <h5>{user.username} </h5>
       <h5>{user.email} </h5>
     </div>
+    <div>
+      <ul>
+        <li>
+          <Link to ={`/users/${userId}/posts`}>Posts</Link>
+        </li>
+        <li>
+          <Link to ={`/users/${userId}/todos`}>todos</Link>
+        </li>
+        <li>
+          <Link to ={`/users/${userId}/album`}>album</Link>
+        </li>
+      </ul>
+    </div>
+    </>
   )
 }
