@@ -6,9 +6,12 @@ import {
   RouterProvider,
 } from "react-router-dom";
 import HomePage from './pages/home.tsx';
-import Users from './pages/users.tsx';
+import Users, { usersLoader } from './pages/users.tsx';
 import RootLayout from './pages/root.tsx';
-import UsersId from './pages/usersId.tsx';
+import UsersId, { userLoader } from './pages/usersId.tsx';
+import Userpost from './pages/userpost.tsx';
+import Userstodos from './pages/userstodos.tsx';
+import Usersalbum from './pages/usersalbum.tsx';
 const router = createBrowserRouter([
 
 {
@@ -22,11 +25,29 @@ const router = createBrowserRouter([
     {
       path: "/users",
       element: <Users/>,
+      loader:usersLoader
+
     },
     {
-      path: "/users/:usersId",
+      path: "users/:userId",
       element: <UsersId/>,
+      loader:userLoader,
+      children:[
+        {
+        path:"post",
+        element:<Userpost/>
+        },
+        {
+          path:"todos",
+          element:<Userstodos/>,
+        },
+        {
+          path:"album",
+          element:<Usersalbum/>,
+        },
+      ]
     },
+    
   ]
 }
 
