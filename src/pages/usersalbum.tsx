@@ -1,5 +1,5 @@
 import React from 'react'
-import {useLoaderData} from 'react-router-dom';
+import {Link, useLoaderData} from 'react-router-dom';
 
 interface albumint{
   userId:number;
@@ -22,7 +22,7 @@ export default function Usersalbum() {
     </div>
     <ul>
       {albums.map(album=>(
-        <li key={album.id}>{album.title}</li>
+        <li key={album.id}><Link to= {`/users/${album.userId}/albums/${album.id}`}>{album.title} </Link></li>
       ))}
     </ul>
     </>

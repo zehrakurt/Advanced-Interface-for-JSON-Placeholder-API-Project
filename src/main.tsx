@@ -12,6 +12,7 @@ import UsersId, { userLoader } from './pages/usersId.tsx';
 import Userpost,{userPostLoader} from './pages/userpost.tsx';
 import Userstodos, { userTodosLoader } from './pages/userstodos.tsx';
 import Usersalbum, { userAlbumsLoader } from './pages/usersalbum.tsx';
+import Albumscomment, { albumsCommentsLoader } from './pages/albumscomment.tsx';
 const router = createBrowserRouter([
 
 {
@@ -53,7 +54,11 @@ const router = createBrowserRouter([
         },
       ]
     },
-    
+    {
+      path:"users/:userId/albums/:albumId",
+      element:<Albumscomment/>,
+      loader:albumsCommentsLoader
+    },
   ]
 }
 
