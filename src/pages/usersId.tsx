@@ -31,7 +31,7 @@ export default function UsersId() {
           <Link to ={`/users/${userId}/todos`}>todos</Link>
         </li>
         <li>
-          <Link to ={`/users/${userId}/album`}>album</Link>
+          <Link to ={`/users/${userId}/albums`}>album</Link>
         </li>
       </ul>
     </div>
