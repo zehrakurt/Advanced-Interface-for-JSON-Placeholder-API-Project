@@ -14,8 +14,8 @@ export const useStore=create(
         (set)=>(
             {
                 favorites:[],
-                addFavorite:(photo)=> set((state)=>({favorites:[...state.favorites,photo]}))
-                ,removeFavorite:()=>set((state)=>({
+                addFavorite:(photo:Photoint)=> set((state)=>({favorites:[...state.favorites,photo]}))
+                ,removeFavorite:(id:number)=>set((state)=>({
                     favorites:state.favorites.filter((photo)=>photo.id!==id)
                 }))
             }
