@@ -1,5 +1,7 @@
 import React from 'react'
 import { useLoaderData} from 'react-router-dom';
+import { useStore } from '../store';
+import UsersId from './usersId';
 interface Photoint{
     id:number,
     title:string,
@@ -15,6 +17,16 @@ export const albumsCommentsLoader=async ({params}:any)=>{
 
 export default function Albumscomment() {
     const photos=useLoaderData() as Photoint[]
+    const {addFavorite,removeFavorite,favorites}=useStore();
+
+    const handleFavoriteClick=(photo:PhotoParams)=>{
+      if (favorites.some(fav=>fav.id===photo.id)){
+removeFavorite(photo.id)
+      }  
+      else{
+        addFavorite({...photo,userId:Number(UsersId)});
+      }   
+    }
   return (
     <> 
     <div>
@@ -22,7 +34,7 @@ export default function Albumscomment() {
      <ul>
         {photos.map((photo)=>(
             <li key={photo.id}><img src={photo.thumbnailUrl}/><h4>{photo.title}</h4>
-            <button>Favorite</button>
+            <button onClick={()=>handleFavoriteClick(photo)}>{favorites.some(fav=>fav.id===photo.id)?"unfavorite":"favorite"}</button>
             </li>          
         )
     

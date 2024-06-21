@@ -15,7 +15,7 @@ export const userPostLoader=async ({params})=>{
 }
 
 export default function UsersPosts(){
-  const posts=useLoaderData() as Todosint[];
+  const posts=useLoaderData() as Postsint[];
   return(
     <>
     <div>Posts</div>

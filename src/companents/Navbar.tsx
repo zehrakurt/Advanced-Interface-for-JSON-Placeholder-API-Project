@@ -13,6 +13,7 @@ function Navbar() {
           <Nav className="me-auto">
             <Nav.Link as={Link} to="/">Home</Nav.Link>
             <Nav.Link as={Link} to ="/users">Users</Nav.Link>
+            <Nav.Link as={Link} to="/favorites">Favorites({fa})</Nav.Link>
           </Nav>
         </Container>
       </NavbarBS>
