@@ -14,7 +14,7 @@
     "react": "^18.2.0",
     "react-bootstrap": "^2.10.2",
     "react-dom": "^18.2.0",
-    "react-router-dom": "^6.23.1",
+    "react-router-dom": "^6.26.0",
     "zustand": "^4.5.2"
   },
   "devDependencies": {
@@ -29,5 +29,10 @@
     "eslint-plugin-react-refresh": "^0.4.7",
     "typescript": "^5.2.2",
     "vite": "^5.2.0"
-  }
+  },
+  "description": "This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.",
+  "main": "eslintrc.js",
+  "keywords": [],
+  "author": "",
+  "license": "ISC"
 }
